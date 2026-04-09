@@ -1,4 +1,4 @@
-<h1 align="center">Medical AI MLOps Pipeline 🚀</h1>
+<h1 align="center">Hệ Thống Xử Lý Ảnh Y Tế DICOM 🚀</h1>
 
 <p align="center">
   <strong>Hệ thống Xử lý Tiền trạm Dữ liệu Y tế (CT Scans) & Trực quan hoá Đa chiều</strong><br>

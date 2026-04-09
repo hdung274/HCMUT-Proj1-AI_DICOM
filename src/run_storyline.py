@@ -7,7 +7,7 @@ from utils import DATA_FOLDER, get_target_dicoms
 
 if __name__ == "__main__":
     print("\n" + "="*50)
-    print("THỰC THI PIPELINE MLOPS HÀNG LOẠT (BATCH PROCESSING)")
+    print("THỰC THI HỆ THỐNG TIỀN XỬ LÝ ẢNH DICOM HÀNG LOẠT (BATCH PROCESSING)")
     print("="*50)
     
     scans = pl.query(pl.Scan).all()
