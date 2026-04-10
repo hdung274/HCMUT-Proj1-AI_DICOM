@@ -2,6 +2,9 @@
 data/
 output/
 
+# Ignore personal report documents
+docs/
+
 # Ignore Python Caches
 __pycache__/
 *.py[cod]
