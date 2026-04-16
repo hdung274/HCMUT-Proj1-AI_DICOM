@@ -10,11 +10,11 @@ Dưới đây là một số hình ảnh xử lý tự động của hệ thốn
 
 ### Bước 1: Tiền Xử Lý (Image Preprocessing)
 Tiến hành loại bỏ các vùng nhiễu (mỡ, mô thừa) nằm ngoài vùng phổi.
-![Preprocessing Step](docs/images/1_Z_Slice_Preprocessed.jpg)
+![Preprocessing Step](images/1_Z_Slice_Preprocessed.jpg)
 
 ### Bước 2: Đối chiếu Chuyên gia (Ground Truth Mapping)
 Ánh xạ tọa độ Nodule thực tế (được bác sĩ chẩn đoán) thông qua thư viện Pylidc lên vùng Phổi vừa được làm sạch để đánh giá hệ thống.
-![Ground Truth Red Spot](docs/images/2_Doctor_RedSpot.jpg)
+![Ground Truth Red Spot](images/2_Doctor_RedSpot.jpg)
 
 ### Bước 3: Dựng Không Gian 3D (Object Rendering)
 Tọa độ được nén qua thuật toán Marching Cubes để xuất ra vật thể ảo `.obj` nguyên khối (sẵn sàng nhúng lên PowerPoint).
