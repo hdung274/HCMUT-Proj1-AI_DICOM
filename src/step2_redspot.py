@@ -5,12 +5,15 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from utils import get_target_dicoms, get_hu_pixels, apply_windowing, extract_lung_mask_basic, DATA_FOLDER, OUTPUT_DIR
 
-def run(target_id):
+def run(target_id, sorted_dicoms=None, nods=None):
     patient_dir = os.path.join(OUTPUT_DIR, target_id)
     os.makedirs(patient_dir, exist_ok=True)
     print(f"  [BƯỚC 2] Xác thực tọa độ Ground Truth (Red Spot)")
     
-    sorted_dicoms, nods = get_target_dicoms(DATA_FOLDER, target_id)
+    if sorted_dicoms is None or nods is None:
+        sorted_dicoms, nods = get_target_dicoms(DATA_FOLDER, target_id)
+    if not sorted_dicoms or not nods: return
+    
     ann = nods[0][0]
     mask_gt_small = ann.boolean_mask()
     bbox = ann.bbox()

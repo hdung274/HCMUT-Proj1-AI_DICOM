@@ -4,12 +4,14 @@ from skimage import measure
 from skimage.segmentation import clear_border
 from utils import get_target_dicoms, DATA_FOLDER, OUTPUT_DIR
 
-def run(target_id):
+def run(target_id, sorted_dicoms=None, nods=None):
     patient_dir = os.path.join(OUTPUT_DIR, target_id)
     os.makedirs(patient_dir, exist_ok=True)
     print(f"  [BƯỚC 3] Trực quan hóa Không gian 3D (Định dạng OBJ)")
     
-    sorted_dicoms, nods = get_target_dicoms(DATA_FOLDER, target_id)
+    if sorted_dicoms is None or nods is None:
+        sorted_dicoms, nods = get_target_dicoms(DATA_FOLDER, target_id)
+    if not sorted_dicoms or not nods: return
     
     image = np.stack([s.pixel_array for s in sorted_dicoms])
     image = image.astype(np.int16)

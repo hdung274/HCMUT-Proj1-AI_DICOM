@@ -39,7 +39,11 @@ def get_target_dicoms(data_folder, target_id="LIDC-IDRI-0001"):
     
     uid = scan.series_instance_uid
     dicoms = []
-    for root, _, files in os.walk(data_folder):
+    
+    target_path = os.path.join(data_folder, 'LIDC-IDRI', target_id)
+    search_folder = target_path if os.path.exists(target_path) else data_folder
+    
+    for root, _, files in os.walk(search_folder):
         for file in files:
             if file.lower().endswith('.dcm'):
                 path = os.path.join(root, file)
